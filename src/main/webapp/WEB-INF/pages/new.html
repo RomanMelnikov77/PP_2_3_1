@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>New User</title>
+</head>
+<<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>New user</title>
+</head>
+<body>
+<form th:method = "POST" th:action="@{/users}" th:object = "${user}">
+    <table>
+        <tr>
+            <th><label for="name">Enter name:</label></th>
+            <th> <input type = "text" th:field = "*{name}" id ="name"/></th>
+        </tr>
+        <tr>
+            <th> <label for="secondName">Enter secondName:</label></th>
+            <th><input type = "text" th:field = "*{secondName}" id ="secondName"/></th>
+        </tr>
+        <tr>
+            <th> <label for="age">Enter age:</label></th>
+            <th><input type = "text" th:field = "*{age}" id ="age"/></th>
+        </tr>
+
+    </table>
+    <br/>
+    <input type = "submit" value="Create!"/>
+
+</form>
+
+</body>
+</html>
