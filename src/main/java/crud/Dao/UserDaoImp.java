@@ -14,7 +14,7 @@ public class UserDaoImp implements UserDao {
 
     @Override
     @SuppressWarnings("unchecked")
-    public List<User> index() {
+    public List<User> getUsers() {
         return entityManager.createQuery("SELECT u FROM User u", User.class).getResultList();
     }
     @Override
@@ -23,12 +23,12 @@ public class UserDaoImp implements UserDao {
     }
 
     @Override
-    public void save(User user) {
+    public void saveUser(User user) {
         entityManager.persist(user);
     }
 
     @Override
-    public void update(User user) {
+    public void updateUser(User user) {
         entityManager.merge(user);
     }
 

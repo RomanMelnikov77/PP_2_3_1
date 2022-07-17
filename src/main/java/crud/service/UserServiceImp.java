@@ -13,11 +13,14 @@ public class UserServiceImp implements UserService {
     @Autowired
     private UserDao userDaoImpl;
 
+    public UserServiceImp(UserDao userDaoImpl) {
+        this.userDaoImpl = userDaoImpl;
+    }
 
     @Override
     @Transactional
     public List<User> index() {
-        return userDaoImpl.index();
+        return userDaoImpl.getUsers();
     }
 
     @Override
@@ -29,13 +32,13 @@ public class UserServiceImp implements UserService {
     @Override
     @Transactional
     public void save(User user) {
-        userDaoImpl.save(user);
+        userDaoImpl.saveUser(user);
     }
 
     @Override
     @Transactional
     public void update(User user) {
-        userDaoImpl.update(user);
+        userDaoImpl.updateUser(user);
     }
 
     @Override
